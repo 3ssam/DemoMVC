@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     @RequestMapping("home")
-    public void home(){
+    public String home(){
         System.out.println("You are ask /home url");
+        return  "home.jsp";
     }
 }
