@@ -8,6 +8,6 @@
 </head>
 <body>
 Yes We made it
-My name is ${name}
+My name is ${name} ${secondname}
 </body>
 </html>
