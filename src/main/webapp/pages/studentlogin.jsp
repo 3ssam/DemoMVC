@@ -17,5 +17,14 @@
     <input type="text" name="email"><br><br>
     <input type="submit">
 </form>
+
+<br><br>
+
+<form action="show">
+    <label>Id</label>
+    <input type="text" name="id"><br><br>
+    <input type="submit" title="Search">
+</form>
+
 </body>
 </html>

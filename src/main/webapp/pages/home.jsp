@@ -7,7 +7,10 @@
 <head>
 </head>
 <body>
+${student}
+<br>
 Yes We made it
 My name is ${student.id} , ${student.name} , ${student.age} , ${student.email}
+
 </body>
 </html>

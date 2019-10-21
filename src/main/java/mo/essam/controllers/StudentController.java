@@ -5,6 +5,7 @@ import mo.essam.models.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -25,6 +26,15 @@ public class StudentController {
     public void StudentForm(Student student){
         studentDAO.save(student);
     }
+
+    @RequestMapping("/show")
+    public ModelAndView StudentForm(@RequestParam int id){
+        ModelAndView view = new ModelAndView("home");
+        Student student = studentDAO.findById(id).orElse(null);
+        view.addObject("student",student);
+        return view;
+    }
+
 
 
 }
