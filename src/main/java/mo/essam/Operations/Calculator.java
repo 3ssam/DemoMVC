@@ -9,6 +9,6 @@ public class Calculator {
     }
 
     public int perform(int number1, int number2) {
-        return (number1+ number2) * number1;
+        return calculatorService.add(number1, number2) * number1;
     }
 }

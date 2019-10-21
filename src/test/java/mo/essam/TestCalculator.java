@@ -3,13 +3,20 @@ import mo.essam.Operations.Calculator;
 import mo.essam.Operations.CalculatotService;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 public class TestCalculator {
 
     Calculator calculator = null;
-    CalculatotService service = Mockito.mock(CalculatotService.class);
+    @Mock
+    CalculatotService service ;
+
+    @Rule public MockitoRule rule = MockitoJUnit.rule();
 
     @Before
     public void init(){
