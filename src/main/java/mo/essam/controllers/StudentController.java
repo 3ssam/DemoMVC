@@ -16,22 +16,54 @@ public class StudentController {
     private StudentDAO studentDAO;
 
     @RequestMapping("/addform")
-    public ModelAndView StudentForm(){
+    public ModelAndView studentForm(){
         ModelAndView view = new ModelAndView();
         view.setViewName("studentlogin");
         return view;
     }
 
     @RequestMapping("/add")
-    public void StudentForm(Student student){
+    public void addStudent(Student student){
         studentDAO.save(student);
     }
 
     @RequestMapping("/show")
-    public ModelAndView StudentForm(@RequestParam int id){
+    public ModelAndView getStudent(@RequestParam int id){
         ModelAndView view = new ModelAndView("home");
         Student student = studentDAO.findById(id).orElse(null);
         view.addObject("student",student);
+        return view;
+    }
+
+
+    @RequestMapping("/delete")
+    public ModelAndView deleteStudent(@RequestParam int id){
+        String response;
+        ModelAndView view = new ModelAndView("home");
+        Student student = studentDAO.findById(id).orElse(null);
+        if (student == null)
+            response = "Error this id is not found";
+        else {
+            response = "we are delete this id = " + id;
+            studentDAO.deleteById(id);
+        }
+        view.addObject("response", response);
+        return view;
+    }
+
+
+    @RequestMapping("/update")
+    public ModelAndView updateStudent(@RequestParam int id,Student student){
+        String response;
+        ModelAndView view = new ModelAndView("home");
+        Student Orignalstudent = studentDAO.findById(id).orElse(null);
+        if (student == null)
+           studentDAO.save(student);
+        else {
+            student.setId(id);
+            studentDAO.save(student);
+        }
+        view.addObject("student", student);
         return view;
     }
 
