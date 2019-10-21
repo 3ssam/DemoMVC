@@ -104,7 +104,7 @@ public class StudentController {
         return studentDAO.findById(id);
     }
 
-    @RequestMapping("")
+    @RequestMapping(path="",produces = {"application/xml"})
     @ResponseBody
     public List<Student> getStudents(){
         return studentDAO.findAll();
