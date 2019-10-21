@@ -8,5 +8,6 @@
 </head>
 <body>
 Yes We made it
+My name is ${name}
 </body>
 </html>
