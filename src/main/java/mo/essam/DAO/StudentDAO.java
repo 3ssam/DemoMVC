@@ -1,12 +1,13 @@
 package mo.essam.DAO;
 
 import mo.essam.models.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface StudentDAO extends CrudRepository<Student,Integer> {
+public interface StudentDAO extends JpaRepository<Student,Integer> {
 
     List<Student> findByName(String name);
 

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/student")
@@ -99,14 +100,14 @@ public class StudentController {
 
     @RequestMapping("/{id}")
     @ResponseBody
-    public String getStudentbyid(@PathVariable("id") int id){
-        return studentDAO.findById(id).toString();
+    public Optional<Student> getStudentbyid(@PathVariable("id") int id){
+        return studentDAO.findById(id);
     }
 
     @RequestMapping("")
     @ResponseBody
-    public String getStudents(){
-        return studentDAO.findAll().toString();
+    public List<Student> getStudents(){
+        return studentDAO.findAll();
     }
 
 
