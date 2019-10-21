@@ -9,8 +9,6 @@
 </head>
 <body>
 <form action="add">
-    <label>ID</label>
-    <input type="text" name="id"><br><br>
     <label>Name</label>
     <input type="text" name="name"><br><br>
     <label>Age</label>
