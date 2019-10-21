@@ -8,7 +8,7 @@
     <title>Student Form</title>
 </head>
 <body>
-<form action="addStudent">
+<form action="add">
     <label>ID</label>
     <input type="text" name="id"><br><br>
     <label>Name</label>
