@@ -4,8 +4,10 @@ import mo.essam.DAO.StudentDAO;
 import mo.essam.models.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -94,5 +96,18 @@ public class StudentController {
         view.addObject("student",students);
         return view;
     }
+
+    @RequestMapping("/{id}")
+    @ResponseBody
+    public String getStudentbyid(@PathVariable("id") int id){
+        return studentDAO.findById(id).toString();
+    }
+
+    @RequestMapping("")
+    @ResponseBody
+    public String getStudents(){
+        return studentDAO.findAll().toString();
+    }
+
 
 }
