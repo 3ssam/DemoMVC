@@ -8,6 +8,6 @@
 </head>
 <body>
 Yes We made it
-My name is ${name} ${secondname}
+My name is ${student.id} , ${student.name} , ${student.age} , ${student.email}
 </body>
 </html>
