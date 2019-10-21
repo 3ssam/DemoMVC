@@ -20,5 +20,6 @@ public class TestCalculator {
     public void testAdd(){
         Mockito.when(service.add(2,7)).thenReturn(9);
         Assert.assertEquals(18,calculator.perform(2,7));
+        Mockito.verify(service).add(2,7);
     }
 }
