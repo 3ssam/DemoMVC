@@ -98,17 +98,5 @@ public class StudentController {
         return view;
     }
 
-    @RequestMapping("/{id}")
-    @ResponseBody
-    public Optional<Student> getStudentbyid(@PathVariable("id") int id){
-        return studentDAO.findById(id);
-    }
-
-    @RequestMapping(path="",produces = {"application/xml"})
-    @ResponseBody
-    public List<Student> getStudents(){
-        return studentDAO.findAll();
-    }
-
 
 }
